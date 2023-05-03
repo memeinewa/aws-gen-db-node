@@ -101,12 +101,12 @@ function template(data) {
             Item: {
                 hk: { S: "OCCUPATION" },
                 rk: { S: data["KCPBCD"] },
-                labelTh: { S: data["Label TH (Draft)*"] },
-                labelEn: { S: data["Label EN (Draft)*"] },
+                labelTh: { S: trim(data["Label TH (Draft)*"]) },
+                labelEn: { S: trim(data["Label EN (Draft)*"]) },
                 value: { S: data["KCPBCD"] },
                 seq: { N: data["Ordering on Mobile"] === "Alphabetical" ? "0" : data["Ordering on Mobile"] },
-                groupLabelTh: { S: data["Group Name TH"] },
-                groupLabelEn: { S: data["Group Name EN"] },
+                groupLabelTh: { S: trim(data["Group Name TH"]) },
+                groupLabelEn: { S: trim(data["Group Name EN"]) },
                 type: { S: "OCCUPATION" },
             }
         }
@@ -122,8 +122,8 @@ function templateType(data) {
             Item: {
                 hk: { S: "TYPE_OF_BUSINESS" },
                 rk: { S: data["BPBTYP"] },
-                labelTh: { S: data["Label TH (Draft)*"] },
-                labelEn: { S: data["Label EN (Draft)*"] },
+                labelTh: { S: trim(data["Label TH (Draft)*"]) },
+                labelEn: { S: trim(data["Label EN (Draft)*"]) },
                 value: { S: data["BPBTYP"] },
                 hasChild: { S: data["BPHFLG"] },
                 level: { N: level },
